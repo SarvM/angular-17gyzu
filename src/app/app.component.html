@@ -1,0 +1,20 @@
+<div *ngIf="condition else elseCondition">
+  True Part to be displayed.
+</div>
+
+<ng-template #elseCondition>
+  This get displayed on else condition
+</ng-template>
+
+<br>
+<!-- Other ways -->
+<ng-template [ngIf]="condition" [ngIfElse]="elseCondition">
+   <div>
+     True Part to be displayed.
+   </div>
+</ng-template>
+<br>
+
+<ng-container *ngTemplateOutlet="elseCondition">
+  Content displayed using Template Outlet
+</ng-container>
